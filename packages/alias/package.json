@@ -13,8 +13,13 @@
   "author": "Johannes Stein",
   "homepage": "https://github.com/rollup/plugins/tree/master/packages/alias#readme",
   "bugs": "https://github.com/rollup/plugins/issues",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "main": "dist/alias.cjs",
+  "module": "modules/alias.js",
+  "exports": {
+    "types": "./types/index.d.ts",
+    "require": "./dist/alias.cjs",
+    "import": "./modules/alias.js"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
@@ -51,11 +56,10 @@
     "slash": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^8.4.0",
-    "@rollup/plugin-typescript": "^5.0.2",
-    "del-cli": "^3.0.1",
-    "rollup": "^2.58.0",
-    "typescript": "^4.1.2"
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "del-cli": "^4.0.1",
+    "rollup": "^2.67.3",
+    "typescript": "^4.5.5"
   },
   "types": "types/index.d.ts",
   "ava": {

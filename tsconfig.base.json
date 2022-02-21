@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["es6"],
