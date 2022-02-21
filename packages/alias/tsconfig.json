@@ -1,1 +1,18 @@
-../../shared/tsconfig.json
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "modules",
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "declarationDir": "types",
+    "composite": true,
+    "lib": ["ES2017"],
+    "module": "ES2020",
+    "moduleResolution": "nodenext"
+  },
+  "include": ["modules/**/*"],
+  "exclude": ["node_modules"]
+}

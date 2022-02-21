@@ -148,11 +148,10 @@ importers:
 
   packages/buble:
     specifiers:
-      '@rollup/plugin-typescript': ^8.3.0
       '@rollup/pluginutils': ^4.1.2
       '@types/buble': ^0.19.2
       buble: ^0.20.0
-      del-cli: ^3.0.1
+      del-cli: ^4.0.1
       rollup: ^2.67.3
       source-map: ^0.7.3
       typescript: ^4.5.5
@@ -161,8 +160,7 @@ importers:
       '@types/buble': 0.19.2
       buble: 0.20.0
     devDependencies:
-      '@rollup/plugin-typescript': 8.3.0_c2c99019df6b8c5bd2a51082d3c90db3
-      del-cli: 3.0.1
+      del-cli: 4.0.1
       rollup: 2.67.3
       source-map: 0.7.3
       typescript: 4.5.5
@@ -2677,21 +2675,6 @@ packages:
       rollup: 2.67.3
       tslib: 2.3.1
       typescript: 4.1.2
-    dev: true
-
-  /@rollup/plugin-typescript/8.3.0_c2c99019df6b8c5bd2a51082d3c90db3:
-    resolution: {integrity: sha512-I5FpSvLbtAdwJ+naznv+B4sjXZUcIvLLceYpITAn7wAP8W0wqc5noLdGIp9HGVntNhRWXctwPYrSSFQxtl0FPA==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.67.3
-      resolve: 1.20.0
-      rollup: 2.67.3
-      tslib: 2.3.1
-      typescript: 4.5.5
     dev: true
 
   /@rollup/plugin-virtual/2.0.3_rollup@2.67.3:

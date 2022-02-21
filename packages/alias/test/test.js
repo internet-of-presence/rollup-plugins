@@ -6,7 +6,7 @@ import { rollup } from 'rollup';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import nodeResolvePlugin from '@rollup/plugin-node-resolve';
 
-import alias from '..';
+import alias from '../';
 
 const normalizePath = (pathToNormalize) => pathToNormalize;
 const DIRNAME = normalizePath(__dirname);

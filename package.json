@@ -84,7 +84,8 @@
     ],
     "exclude": [
       "lib/client*.js",
-      "test/"
+      "test/",
+      "test.ava/"
     ]
   },
   "packageManager": "pnpm@6.31.0"

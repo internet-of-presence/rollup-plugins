@@ -2,6 +2,7 @@
 **/dist
 **/node_modules
 **/test/**/output
+**/test.ava/**/output
 packages/commonjs/test/fixtures
 packages/typescript/test/fixtures/syntax-error
 

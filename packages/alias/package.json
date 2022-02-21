@@ -14,11 +14,13 @@
   "homepage": "https://github.com/rollup/plugins/tree/master/packages/alias#readme",
   "bugs": "https://github.com/rollup/plugins/issues",
   "main": "dist/alias.cjs",
-  "module": "modules/alias.js",
+  "module": "./modules/alias.js",
+  "type": "module",
   "exports": {
-    "types": "./types/index.d.ts",
     "require": "./dist/alias.cjs",
-    "import": "./modules/alias.js"
+    "types": "./types/index.d.ts",
+    "import": "./modules/alias.js",
+    "default": "./modules/alias.js"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -39,6 +41,7 @@
   },
   "files": [
     "dist",
+    "modules",
     "types",
     "README.md",
     "LICENSE"

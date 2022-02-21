@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['rollup', 'plugin:import/typescript'],
   parserOptions: {
-    project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json'],
+    project: ['./tsconfig.eslint.json', './packages/*/tsconfig.json','./modules/*/tsconfig.json', './modules/tsconfig.json'],
     tsconfigRootDir: __dirname
   },
   rules: {
@@ -19,7 +19,7 @@ module.exports = {
       }
     },
     {
-      files: ['**/test/**'],
+      files: ['**/test/**', '**/test.ava/**'],
       rules: {
         'import/extensions': 'off'
       }

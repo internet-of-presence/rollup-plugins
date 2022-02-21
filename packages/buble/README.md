@@ -31,9 +31,11 @@ Create a `rollup.config.js` [configuration file](https://www.rollupjs.org/guide/
 import buble from '@rollup/plugin-buble';
 
 export default {
-  input: 'src/index.js',
+  input: 'modules/module-name.js',
   output: {
-    dir: 'output',
+    dir: 'dist',
+    entryFileNames: '[name].cjs',
+    chunkFileNames: 'chunk-[name]-[hash].cjs',
     format: 'cjs'
   },
   plugins: [buble()]

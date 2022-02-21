@@ -32,7 +32,7 @@ const root = join(__dirname, '..');
       log(chalk.green('Coverage Submitted:'), file.replace(root, ''));
     } catch (e) {
       log(chalk.red('Coverage Failure:'), file.replace(root, ''));
-      log(e.stack);
+      log(/** @type {Error} */ (e).stack);
     }
   }
 })();

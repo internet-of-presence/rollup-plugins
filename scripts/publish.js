@@ -59,6 +59,7 @@ const getCommits = async (pluginName) => {
     .map((commit) => {
       const node = parser.sync(commit);
 
+      // @ts-ignore
       node.breaking = reBreaking.test(node.body || node.footer) || /!:/.test(node.header);
 
       return node;
@@ -73,6 +74,7 @@ const getNewVersion = (version, commits) => {
     ['--major', '--minor', '--patch'].includes(arg)
   );
   if (intersection.length) {
+    // @ts-ignore
     return semver.inc(version, intersection[0].substring(2));
   }
 
@@ -125,7 +127,13 @@ const updateChangelog = (commits, cwd, pluginName, version) => {
   const logPath = join(cwd, 'CHANGELOG.md');
   const logFile = readFileSync(logPath, 'utf-8');
   const oldNotes = logFile.startsWith(title) ? logFile.slice(title.length).trim() : logFile;
-  const notes = { breaking: [], fixes: [], features: [], updates: [] };
+
+  const notes = {
+    breaking: /** @type {string[]} */ ([]),
+    fixes: /** @type {string[]} */ ([]),
+    features: /** @type {string[]} */ ([]),
+    updates: /** @type {string[]} */ ([])
+  };
 
   for (const { breaking, hash, header, type } of commits) {
     const ref = /\(#\d+\)/.test(header) ? '' : ` (${hash.substring(0, 7)})`;

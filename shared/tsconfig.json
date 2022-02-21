@@ -1,4 +1,16 @@
 {
   "extends": "../../tsconfig.base.json",
-  "include": ["src/**/*", "types/**/*"]
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    //"declarationDir": "types",
+    "composite": true,
+    "lib": ["ES2017", "ES2021"],
+    "module": "ES2020",
+    "moduleResolution": "node"
+  },
+  "include": ["modules/**/*", "types/**/*"]
 }

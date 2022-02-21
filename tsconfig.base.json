@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
+    "composite": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["es6"],
@@ -16,5 +17,13 @@
     "strict": true,
     "target": "es2017"
   },
-  "exclude": ["dist", "node_modules", "test/types"]
+  "exclude": [
+    "**/dist",
+    "node_modules",
+    "**/node_modules",
+    "test/types",
+    "modules/test.ava",
+    "test.ava/types",
+    "packages/**/node_modules"
+  ]
 }
