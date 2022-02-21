@@ -1,20 +1,14 @@
-[cover]: https://codecov.io/gh/rollup/plugins/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/rollup/plugins
-[discord]: https://img.shields.io/discord/466787075518365708?color=778cd1&label=chat
-[discord-url]: https://is.gd/rollup_chat
-[tests]: https://img.shields.io/circleci/project/github/rollup/plugins.svg
-[tests-url]: https://circleci.com/gh/rollup/plugins
+# Rollup Plugins (unoffical fork)
 
-[![tests][tests]][tests-url]
-[![cover][cover]][cover-url]
-[![discord][discord]][discord-url]
-[![libera manifesto](https://img.shields.io/badge/libera-manifesto-lightgrey.svg)](https://liberamanifesto.com)
+This repository houses plugins that we considers critical to every day use of Rollup, plugins which the organization has adopted maintenance of, and plugins that the project recommends to its users.
 
-# Rollup Plugins
+This fork is created because the main repo is badly broken and maintainance overhead explodes changes are not do able any more.
+Biggest Improvements are that this works with current NodeJS and Current Browsers as also Current TypeScript versions. 
 
-🍣 The one-stop shop for official Rollup plugins
-
-This repository houses plugins that Rollup considers critical to every day use of Rollup, plugins which the organization has adopted maintenance of, and plugins that the project recommends to its users.
+- [ ] supports corepack
+- [ ] supports directly importing dependencies as esm from github install.
+- [ ] supports no build tests
+- [ ] supports smaller code base and less code for packages.
 
 ## Plugins Found Here
 
@@ -54,6 +48,7 @@ This repository houses plugins that Rollup considers critical to every day use o
 |                                     |                                                            |
 | ----------------------------------- | ---------------------------------------------------------- |
 | [pluginutils](packages/pluginutils) | A set of utility functions commonly used by Rollup plugins |
+| [pluginmaintainance](packages/pluginmaintainance) | A set of utility functions commonly used to build and update plugins |
 |                                     |                                                            |
 
 ## Contributing
