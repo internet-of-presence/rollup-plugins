@@ -98,14 +98,14 @@ importers:
       del: ^5.1.0
       node-noop: ^1.0.0
       rollup: ^2.67.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     devDependencies:
       '@rollup/plugin-node-resolve': 8.4.0_rollup@2.67.3
-      '@rollup/plugin-typescript': 5.0.2_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 5.0.2_c2c99019df6b8c5bd2a51082d3c90db3
       del: 5.1.0
       node-noop: 1.0.0
       rollup: 2.67.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/babel:
     specifiers:
@@ -182,7 +182,7 @@ importers:
       shx: ^0.3.2
       source-map: ^0.7.3
       source-map-support: ^0.5.19
-      typescript: ^3.9.7
+      typescript: ^4.5.5
     dependencies:
       '@rollup/pluginutils': 4.1.2
       commondir: 1.0.1
@@ -200,19 +200,19 @@ importers:
       shx: 0.3.3
       source-map: 0.7.3
       source-map-support: 0.5.19
-      typescript: 3.9.7
+      typescript: 4.5.5
 
   packages/data-uri:
     specifiers:
       '@rollup/plugin-typescript': ^5.0.2
       '@rollup/pluginutils': ^4.1.2
       rollup: ^2.67.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     devDependencies:
-      '@rollup/plugin-typescript': 5.0.2_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 5.0.2_c2c99019df6b8c5bd2a51082d3c90db3
       '@rollup/pluginutils': 4.1.2
       rollup: 2.67.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/dsv:
     specifiers:
@@ -235,18 +235,20 @@ importers:
     specifiers:
       '@rollup/pluginutils': ^4.1.2
       acorn: ^8.7.0
-      estree-walker: ^2.0.1
+      acorn-dynamic-import: ^4.0.0
+      estree-walker: ^3.0.1
       fast-glob: ^3.2.11
       magic-string: ^0.25.7
       prettier: ^2.0.5
       rollup: ^2.67.3
     dependencies:
       '@rollup/pluginutils': 4.1.2
-      estree-walker: 2.0.1
+      estree-walker: 3.0.1
       fast-glob: 3.2.11
       magic-string: 0.25.7
     devDependencies:
       acorn: 8.7.0
+      acorn-dynamic-import: 4.0.0_acorn@8.7.0
       prettier: 2.1.2
       rollup: 2.67.3
 
@@ -258,16 +260,16 @@ importers:
       '@types/eslint': ^7.2.2
       eslint: ^8.9.0
       rollup: ^2.67.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     dependencies:
       '@rollup/pluginutils': 4.1.2
       eslint: 8.9.0
     devDependencies:
       '@rollup/plugin-node-resolve': 13.1.3_rollup@2.67.3
-      '@rollup/plugin-typescript': 8.3.0_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 8.3.0_c2c99019df6b8c5bd2a51082d3c90db3
       '@types/eslint': 7.2.4
       rollup: 2.67.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/graphql:
     specifiers:
@@ -289,12 +291,12 @@ importers:
       '@rollup/plugin-typescript': ^6.1.0
       rollup: ^2.67.3
       rollup-plugin-postcss: ^3.1.8
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     devDependencies:
-      '@rollup/plugin-typescript': 6.1.0_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 6.1.0_c2c99019df6b8c5bd2a51082d3c90db3
       rollup: 2.67.3
       rollup-plugin-postcss: 3.1.8
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/image:
     specifiers:
@@ -319,7 +321,7 @@ importers:
       magic-string: ^0.25.7
       rollup: ^2.67.3
       source-map: ^0.7.3
-      typescript: ^3.9.7
+      typescript: ^4.5.5
     dependencies:
       '@rollup/pluginutils': 4.1.2
       estree-walker: 2.0.1
@@ -330,7 +332,7 @@ importers:
       locate-character: 2.0.5
       rollup: 2.67.3
       source-map: 0.7.3
-      typescript: 3.9.7
+      typescript: 4.5.5
 
   packages/json:
     specifiers:
@@ -418,20 +420,20 @@ importers:
       estree-walker: ^2.0.1
       picomatch: ^2.2.2
       rollup: ^2.67.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     dependencies:
       estree-walker: 2.0.1
       picomatch: 2.2.2
     devDependencies:
       '@rollup/plugin-commonjs': 14.0.0_rollup@2.67.3
       '@rollup/plugin-node-resolve': 8.4.0_rollup@2.67.3
-      '@rollup/plugin-typescript': 5.0.2_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 5.0.2_c2c99019df6b8c5bd2a51082d3c90db3
       '@types/estree': 0.0.45
       '@types/node': 14.14.3
       '@types/picomatch': 2.2.1
       acorn: 8.0.4
       rollup: 2.67.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/replace:
     specifiers:
@@ -442,7 +444,7 @@ importers:
       magic-string: ^0.25.7
       rollup: ^2.67.3
       source-map: ^0.7.3
-      typescript: ^3.9.7
+      typescript: ^4.5.5
     dependencies:
       '@rollup/pluginutils': 4.1.2
       magic-string: 0.25.7
@@ -452,7 +454,7 @@ importers:
       locate-character: 2.0.5
       rollup: 2.67.3
       source-map: 0.7.3
-      typescript: 3.9.7
+      typescript: 4.5.5
 
   packages/run:
     specifiers:
@@ -461,15 +463,15 @@ importers:
       del: ^5.1.0
       rollup: ^2.67.3
       sinon: 9.0.2
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     dependencies:
       '@types/node': 14.0.26
     devDependencies:
-      '@rollup/plugin-typescript': 5.0.2_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 5.0.2_c2c99019df6b8c5bd2a51082d3c90db3
       del: 5.1.0
       rollup: 2.67.3
       sinon: 9.0.2
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/strip:
     specifiers:
@@ -509,18 +511,18 @@ importers:
       buble: ^0.20.0
       resolve: ^1.17.0
       rollup: ^2.67.3
-      typescript: ^4.2.2
+      typescript: ^4.5.5
     dependencies:
       '@rollup/pluginutils': 4.1.2
       resolve: 1.18.1
     devDependencies:
       '@rollup/plugin-buble': 0.21.3_rollup@2.67.3
       '@rollup/plugin-commonjs': 21.0.1_rollup@2.67.3
-      '@rollup/plugin-typescript': 8.3.0_37a792070714517fd7ceaa27e7204112
+      '@rollup/plugin-typescript': 8.3.0_c2c99019df6b8c5bd2a51082d3c90db3
       '@types/node': 17.0.19
       buble: 0.20.0
       rollup: 2.67.3
-      typescript: 4.2.4
+      typescript: 4.5.5
 
   packages/url:
     specifiers:
@@ -544,12 +546,12 @@ importers:
       '@rollup/plugin-node-resolve': ^8.4.0
       '@rollup/plugin-typescript': ^6.0.0
       rollup: ^2.67.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     devDependencies:
       '@rollup/plugin-node-resolve': 8.4.0_rollup@2.67.3
-      '@rollup/plugin-typescript': 6.0.0_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 6.0.0_c2c99019df6b8c5bd2a51082d3c90db3
       rollup: 2.67.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/wasm:
     specifiers:
@@ -557,13 +559,13 @@ importers:
       del-cli: ^3.0.1
       rollup: ^2.67.3
       source-map: ^0.7.3
-      typescript: ^4.1.2
+      typescript: ^4.5.5
     devDependencies:
-      '@rollup/plugin-typescript': 5.0.2_79f859feba155bef31b73a151a422918
+      '@rollup/plugin-typescript': 5.0.2_c2c99019df6b8c5bd2a51082d3c90db3
       del-cli: 3.0.1
       rollup: 2.67.3
       source-map: 0.7.3
-      typescript: 4.1.2
+      typescript: 4.5.5
 
   packages/yaml:
     specifiers:
@@ -2602,7 +2604,7 @@ packages:
       rollup: 2.67.3
     dev: true
 
-  /@rollup/plugin-typescript/5.0.2_79f859feba155bef31b73a151a422918:
+  /@rollup/plugin-typescript/5.0.2_c2c99019df6b8c5bd2a51082d3c90db3:
     resolution: {integrity: sha512-CkS028Itwjqm1uLbFVfpJgtVtnNvZ+og/m6UlNRR5wOOnNTWPcVQzOu5xGdEX+WWJxdvWIqUq2uR/RBt2ZipWg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -2614,10 +2616,10 @@ packages:
       resolve: 1.18.1
       rollup: 2.67.3
       tslib: 2.3.1
-      typescript: 4.1.2
+      typescript: 4.5.5
     dev: true
 
-  /@rollup/plugin-typescript/6.0.0_79f859feba155bef31b73a151a422918:
+  /@rollup/plugin-typescript/6.0.0_c2c99019df6b8c5bd2a51082d3c90db3:
     resolution: {integrity: sha512-Y5U2L4eaF3wUSgCZRMdvNmuzWkKMyN3OwvhAdbzAi5sUqedaBk/XbzO4T7RlViDJ78MOPhwAIv2FtId/jhMtbg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -2629,10 +2631,10 @@ packages:
       resolve: 1.18.1
       rollup: 2.67.3
       tslib: 2.3.1
-      typescript: 4.1.2
+      typescript: 4.5.5
     dev: true
 
-  /@rollup/plugin-typescript/6.1.0_79f859feba155bef31b73a151a422918:
+  /@rollup/plugin-typescript/6.1.0_c2c99019df6b8c5bd2a51082d3c90db3:
     resolution: {integrity: sha512-hJxaiE6WyNOsK+fZpbFh9CUijZYqPQuAOWO5khaGTUkM8DYNNyA2TDlgamecE+qLOG1G1+CwbWMAx3rbqpp6xQ==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -2644,10 +2646,10 @@ packages:
       resolve: 1.18.1
       rollup: 2.67.3
       tslib: 2.3.1
-      typescript: 4.1.2
+      typescript: 4.5.5
     dev: true
 
-  /@rollup/plugin-typescript/8.3.0_37a792070714517fd7ceaa27e7204112:
+  /@rollup/plugin-typescript/8.3.0_c2c99019df6b8c5bd2a51082d3c90db3:
     resolution: {integrity: sha512-I5FpSvLbtAdwJ+naznv+B4sjXZUcIvLLceYpITAn7wAP8W0wqc5noLdGIp9HGVntNhRWXctwPYrSSFQxtl0FPA==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
@@ -2659,22 +2661,7 @@ packages:
       resolve: 1.20.0
       rollup: 2.67.3
       tslib: 2.3.1
-      typescript: 4.2.4
-    dev: true
-
-  /@rollup/plugin-typescript/8.3.0_79f859feba155bef31b73a151a422918:
-    resolution: {integrity: sha512-I5FpSvLbtAdwJ+naznv+B4sjXZUcIvLLceYpITAn7wAP8W0wqc5noLdGIp9HGVntNhRWXctwPYrSSFQxtl0FPA==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.67.3
-      resolve: 1.20.0
-      rollup: 2.67.3
-      tslib: 2.3.1
-      typescript: 4.1.2
+      typescript: 4.5.5
     dev: true
 
   /@rollup/plugin-virtual/2.0.3_rollup@2.67.3:
@@ -3271,6 +3258,14 @@ packages:
       acorn: ^6.0.0
     dependencies:
       acorn: 6.4.2
+
+  /acorn-dynamic-import/4.0.0_acorn@8.7.0:
+    resolution: {integrity: sha512-d3OEjQV4ROpoflsnUA8HozoIR504TFxNivYEUi6uwz0IYhBkTDXGuWlNdMtybRt3nqVx/L6XqMt0FxkXuWKZhw==}
+    peerDependencies:
+      acorn: ^6.0.0
+    dependencies:
+      acorn: 8.7.0
+    dev: true
 
   /acorn-jsx/5.3.1_acorn@6.4.2:
     resolution: {integrity: sha512-K0Ptm/47OKfQRpNQ2J/oIN/3QYiK6FwW+eJbILhsdxh2WTLdl+30o8aGdTbm5JbffpFFAg/g+zi1E+jvJha5ng==}
@@ -5149,6 +5144,10 @@ packages:
 
   /estree-walker/2.0.1:
     resolution: {integrity: sha512-tF0hv+Yi2Ot1cwj9eYHtxC0jB9bmjacjQs6ZBTj82H8JwUywFuc+7E83NWfNMwHXZc11mjfFcVXPe9gEP4B8dg==}
+
+  /estree-walker/3.0.1:
+    resolution: {integrity: sha512-woY0RUD87WzMBUiZLx8NsYr23N5BKsOMZHhu2hoNRVh6NXGfoiT1KOL8G3UHlJAnEDGmfa5ubNA/AacfG+Kb0g==}
+    dev: false
 
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -8866,24 +8865,6 @@ packages:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
     dependencies:
       is-typedarray: 1.0.0
-    dev: true
-
-  /typescript/3.9.7:
-    resolution: {integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript/4.1.2:
-    resolution: {integrity: sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript/4.2.4:
-    resolution: {integrity: sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
     dev: true
 
   /typescript/4.5.5:

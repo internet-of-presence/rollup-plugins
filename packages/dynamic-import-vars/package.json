@@ -25,6 +25,7 @@
     "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
     "ci:test": "pnpm test -- --verbose",
     "prebuild": "del-cli dist",
+    "prepare": "if [ ! -d 'dist' ]; then pnpm build; fi",
     "prerelease": "pnpm build",
     "pretest": "pnpm build -- --sourcemap",
     "release": "pnpm plugin:release --workspace-root -- --pkg $npm_package_name",
@@ -52,12 +53,13 @@
   },
   "dependencies": {
     "@rollup/pluginutils": "^4.1.2",
-    "estree-walker": "^2.0.1",
+    "estree-walker": "^3.0.1",
     "fast-glob": "^3.2.11",
     "magic-string": "^0.25.7"
   },
   "devDependencies": {
     "acorn": "^8.7.0",
+    "acorn-dynamic-import": "^4.0.0",
     "prettier": "^2.0.5",
     "rollup": "^2.67.3"
   },

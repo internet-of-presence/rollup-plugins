@@ -1,13 +1,17 @@
-import typescript from '@rollup/plugin-typescript';
+import nodeResolve from '@rollup/plugin-node-resolve';
 
 import pkg from './package.json';
 
 export default {
-  input: 'src/index.ts',
-  plugins: [typescript()],
+  input: 'modules/data-uri.js',
+  plugins: [nodeResolve()],
   external: [...Object.keys(pkg.devDependencies), 'url'],
-  output: [
-    { format: 'cjs', file: pkg.main, sourcemap: true, exports: 'auto' },
-    { format: 'esm', file: pkg.module, sourcemap: true }
-  ]
+  output: {
+    format: 'cjs',
+    entryFileNames: 'data-uri.cjs',
+    dir: 'dist',
+    sourcemap: true,
+    // was auto
+    exports: 'named'
+  }
 };
