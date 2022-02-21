@@ -7,7 +7,7 @@ const { readFileSync, writeFileSync } = require('fs');
 
 const parser = require('conventional-commits-parser');
 const chalk = require('chalk');
-const execa = require('execa');
+const { execa } = require('execa');
 const semver = require('semver');
 const writePackage = require('write-pkg');
 

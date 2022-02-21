@@ -42,12 +42,12 @@
     "rollup": "^1.20.0||^2.0.0"
   },
   "dependencies": {
-    "@rollup/pluginutils": "^4.1.0"
+    "@rollup/pluginutils": "^4.1.2"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
     "del-cli": "^3.0.1",
-    "rollup": "^2.23.0"
+    "rollup": "^2.67.3"
   },
   "ava": {
     "babel": {
