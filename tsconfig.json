@@ -1,6 +1,11 @@
 {
   "files": [],
   "extends": "./tsconfig.base.json",
-  "references": [{ "path": "scripts" }, { "path": "packages/alias" }, { "path": "packages/buble" }],
+  "references": [
+    { "path": "scripts" },
+    { "path": "packages/alias" },
+    { "path": "packages/buble" },
+    { "path": "packages/data-uri" }
+  ],
   "exclude": ["shared", "dist"]
 }

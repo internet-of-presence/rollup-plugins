@@ -3,7 +3,7 @@
 This repository houses plugins that we considers critical to every day use of Rollup, plugins which the organization has adopted maintenance of, and plugins that the project recommends to its users.
 
 This fork is created because the main repo is badly broken and maintainance overhead explodes changes are not do able any more.
-Biggest Improvements are that this works with current NodeJS and Current Browsers as also Current TypeScript versions. 
+Biggest Improvements are that this works with current NodeJS and Current Browsers as also Current TypeScript versions.
 
 - [ ] supports corepack
 - [ ] supports directly importing dependencies as esm from github install.
@@ -45,11 +45,11 @@ Biggest Improvements are that this works with current NodeJS and Current Browser
 
 ## Other Packages Found Here
 
-|                                     |                                                            |
-| ----------------------------------- | ---------------------------------------------------------- |
-| [pluginutils](packages/pluginutils) | A set of utility functions commonly used by Rollup plugins |
+|                                                   |                                                                      |
+| ------------------------------------------------- | -------------------------------------------------------------------- |
+| [pluginutils](packages/pluginutils)               | A set of utility functions commonly used by Rollup plugins           |
 | [pluginmaintainance](packages/pluginmaintainance) | A set of utility functions commonly used to build and update plugins |
-|                                     |                                                            |
+|                                                   |                                                                      |
 
 ## Contributing
 
