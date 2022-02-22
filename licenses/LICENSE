@@ -1,0 +1,15 @@
+All files in this repository are Apache 2.0 when they are edited by us
+for all files Edited by Frank Lemanschik https://github.com/frank-dspeed
+are also under his private BSL https://github.com/frank-dspeed/licenses
+
+every file has his creation and change date Applyed to it if some one
+makes changes that cause a major release the file automaticly gets transfered
+from BSL to Apache-2.0 even if the original change date would be in the future
+We update the change date on such a release to the date of the release to reflect
+that.
+
+also we got the commit type licenses(packages/name, licenses/LICENSE) to identify license changes
+in the commit history.
+
+Untouched files retain the original license most time MIT or Apache-2.0 as also GPL
+
