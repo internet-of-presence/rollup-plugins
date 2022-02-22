@@ -1,14 +1,22 @@
-# Rollup Plugins (unoffical fork)
+## @esnext-pkg/rollup-plugin\*
 
-This repository houses plugins that we considers critical to every day use of Rollup, plugins which the organization has adopted maintenance of, and plugins that the project recommends to its users.
+https://github.com/esnext-pkg/rollup-plugins
+
+## @rollup/plugin\* Rollup Plugins (unoffical fork)
+
+This repository houses plugins that we considers critical to every day use which the organization has adopted maintenance of, and plugins that the project recommends to its users.
 
 This fork is created because the main repo is badly broken and maintainance overhead explodes changes are not do able any more.
-Biggest Improvements are that this works with current NodeJS and Current Browsers as also Current TypeScript versions.
+Biggest Improvements are that this works with current NodeJS and Current Browsers as also Current TypeScript versions. Also this forks are trying to work on Other Modern Environments
+like GraalJS, Deno and so on.
 
 - [ ] supports corepack
 - [ ] supports directly importing dependencies as esm from github install.
-- [ ] supports no build tests
+- [ ] supports no build needed test runs
 - [ ] supports smaller code base and less code for packages.
+- [ ] JSDOC Typedefintions included. (Typescript Compatible)
+- [ ] Additional Auto generated Typescript declarations
+- [ ] Less dependencies and Maintainance overhead as also faster updates…
 
 ## Plugins Found Here
 

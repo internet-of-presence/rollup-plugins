@@ -1,5 +1,33 @@
 # Contribute
 
+## Philosophie
+
+## General Maintainer infos
+
+We use the following conventions.
+
+- We Author in ES2022 with .js extension in the modules/ folder with a /package.json that sets type module
+- Old CJS should get handled via the following flow
+  - change extension to .cjs and correct links
+  - refactor to Es2022
+- Transpil down to ES2015 CJS builds (There is no point in modern CJS builds as Modern Environments do support ESM)
+- The CJS build always gets the .cjs extension to address nodejs compat for older nodejs versions
+  - There is at present no known environment that can not handle .cjs as javascript
+- For Typechecking we are using typescript with noEmit and allowJs CheckJs
+- We Add // @ts-check to the files to give people type support that are not aware of the allowJs checkJs options
+  - can get deprecated later but is nice to make more people aware of our great typing directly inside the .js files.
+- rollup.config creates the .cjs build
+- tsconfig.json is a composit project that generates the types/module-name.d.ts files for compatibility with other tooling.
+  - can be deprecated if more people are aware of the checkJs allowJs option and start using it even with dependencies.
+
+## Golden Rules
+
+- ESM is the Default Author Formart
+- JSDOC Type Annotations get checked via TypeScript allowJs checkJs // @ts-check
+- We only build a CJS dist else our Source is the Module it self we eat our own dog food!
+- While even older nodeJs Major versions do support ES2020 in the CJS context we will transpil down to es2015
+- when some one needs more adjustments or polyfills he can take the ESM or CJS Source for his bundler/transpiler/tools
+
 ## Introduction
 
 First, thank you for considering contributing to rollup! It's people like you that make the open source community such a great community! 😊
@@ -18,7 +46,13 @@ Working on your first Pull Request? You can learn how from this _free_ series, [
 
 ## Submitting code
 
-Any code change should be submitted as a pull request. The description should explain what the code does and give steps to execute it. The pull request should also contain tests.
+Any code change should be submitted as a pull request. Our guidelines for Pull Requests:
+
+- Please fill in our template in its entirety. Please don't reformat it or modify it
+- The description should explain what the code does and give steps to execute it
+- The pull request should also contain tests
+- Before submitting your Pull Request, please lint your changes by running `pnpm lint` in the root directory
+- If any checks fail for your Pull Request, please resolve them. Always feel free to ask for help if unable to resolve issues with checks
 
 ## Code review process
 

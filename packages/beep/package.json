@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "rollup": "^2.67.3",
-    "strip-ansi": "^7.0.1"
+    "strip-ansi": "^6.0.0"
   },
   "types": "types/index.d.ts",
   "ava": {
