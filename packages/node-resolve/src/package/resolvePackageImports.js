@@ -4,10 +4,15 @@ import { createBaseErrorMsg, findPackageJson, InvalidModuleSpecifierError } from
 import resolvePackageImportsExports from './resolvePackageImportsExports';
 
 async function resolvePackageImports({
+  // @ts-ignore
   importSpecifier,
+  // @ts-ignore
   importer,
+  // @ts-ignore
   moduleDirs,
+  // @ts-ignore
   conditions,
+  // @ts-ignore
   resolveId
 }) {
   const result = await findPackageJson(importer, moduleDirs);

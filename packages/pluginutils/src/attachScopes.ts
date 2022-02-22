@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 // eslint-disable-next-line import/no-unresolved
 import * as estree from 'estree';
 
@@ -61,7 +62,7 @@ class Scope implements AttachedScope {
 
 const attachScopes: AttachScopes = function attachScopes(ast, propertyName = 'scope') {
   let scope = new Scope();
-
+  // @ts-ignore
   walk(ast, {
     enter(n, parent) {
       const node = n as estree.Node;

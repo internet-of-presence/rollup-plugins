@@ -3,15 +3,15 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "noEmit": false,
-    "declarationDir": "types",
-    "rootDir": "modules",
-    "composite": true,
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    "noEmit": true,
+    //"declarationDir": "types",
+    "rootDirs": ["modules", "src"],
+    "composite": false,
     "lib": ["ES2017", "ES2021"],
     "module": "ES2020",
     "moduleResolution": "node"
   },
-  "include": ["modules/**/*"]
+  "include": ["modules/**/*", "src/*", "src/**/*"]
 }

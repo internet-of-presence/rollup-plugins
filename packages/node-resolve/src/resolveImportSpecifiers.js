@@ -16,6 +16,7 @@ import { findPackageJson, ResolveError } from './package/utils';
 const resolveImportPath = promisify(resolve);
 const readFile = promisify(fs.readFile);
 
+// @ts-ignore
 async function getPackageJson(importer, pkgName, resolveOptions, moduleDirectories) {
   if (importer) {
     const selfPackageJsonResult = await findPackageJson(importer, moduleDirectories);
@@ -26,6 +27,7 @@ async function getPackageJson(importer, pkgName, resolveOptions, moduleDirectori
   }
 
   try {
+    // @ts-ignore
     const pkgJsonPath = await resolveImportPath(`${pkgName}/package.json`, resolveOptions);
     const pkgJson = JSON.parse(await readFile(pkgJsonPath, 'utf-8'));
     return { pkgJsonPath, pkgJson, pkgPath: dirname(pkgJsonPath) };
@@ -35,15 +37,25 @@ async function getPackageJson(importer, pkgName, resolveOptions, moduleDirectori
 }
 
 async function resolveIdClassic({
+  // @ts-ignore
   importSpecifier,
+  // @ts-ignore
   packageInfoCache,
+  // @ts-ignore
   extensions,
+  // @ts-ignore
   mainFields,
+  // @ts-ignore
   preserveSymlinks,
+  // @ts-ignore
   useBrowserOverrides,
+  // @ts-ignore
   baseDir,
+  // @ts-ignore
   moduleDirectories,
+  // @ts-ignore
   rootDir,
+  // @ts-ignore
   ignoreSideEffectsForRoot
 }) {
   let hasModuleSideEffects = () => null;
@@ -51,6 +63,7 @@ async function resolveIdClassic({
   let packageBrowserField = false;
   let packageInfo;
 
+  // @ts-ignore
   const filter = (pkg, pkgPath) => {
     const info = getPackageInfo({
       cache: packageInfoCache,
@@ -83,8 +96,10 @@ async function resolveIdClassic({
 
   let location;
   try {
+    // @ts-ignore
     location = await resolveImportPath(importSpecifier, resolveOptions);
   } catch (error) {
+    // @ts-ignore
     if (error.code !== 'MODULE_NOT_FOUND') {
       throw error;
     }
@@ -101,17 +116,29 @@ async function resolveIdClassic({
 }
 
 async function resolveWithExportMap({
+  // @ts-ignore
   importer,
+  // @ts-ignore
   importSpecifier,
+  // @ts-ignore
   exportConditions,
+  // @ts-ignore
   packageInfoCache,
+  // @ts-ignore
   extensions,
+  // @ts-ignore
   mainFields,
+  // @ts-ignore
   preserveSymlinks,
+  // @ts-ignore
   useBrowserOverrides,
+  // @ts-ignore
   baseDir,
+  // @ts-ignore
   moduleDirectories,
+  // @ts-ignore
   rootDir,
+  // @ts-ignore
   ignoreSideEffectsForRoot
 }) {
   if (importSpecifier.startsWith('#')) {
@@ -121,7 +148,9 @@ async function resolveWithExportMap({
       importer,
       moduleDirs: moduleDirectories,
       conditions: exportConditions,
+      // @ts-ignore
       resolveId(id /* , parent*/) {
+        // @ts-ignore
         return resolveIdClassic({
           importSpecifier: id,
           packageInfoCache,
@@ -154,6 +183,7 @@ async function resolveWithExportMap({
     let packageBrowserField = false;
     let packageInfo;
 
+    // @ts-ignore
     const filter = (pkg, pkgPath) => {
       const info = getPackageInfo({
         cache: packageInfoCache,
@@ -219,23 +249,37 @@ async function resolveWithExportMap({
 }
 
 async function resolveWithClassic({
+  // @ts-ignore
   importer,
+  // @ts-ignore
   importSpecifierList,
+  // @ts-ignore
   exportConditions,
+  // @ts-ignore
   warn,
+  // @ts-ignore
   packageInfoCache,
+  // @ts-ignore
   extensions,
+  // @ts-ignore
   mainFields,
+  // @ts-ignore
   preserveSymlinks,
+  // @ts-ignore
   useBrowserOverrides,
+  // @ts-ignore
   baseDir,
+  // @ts-ignore
   moduleDirectories,
+  // @ts-ignore
   rootDir,
+  // @ts-ignore
   ignoreSideEffectsForRoot
 }) {
   for (let i = 0; i < importSpecifierList.length; i++) {
     // eslint-disable-next-line no-await-in-loop
     const result = await resolveIdClassic({
+      // @ts-ignore
       importer,
       importSpecifier: importSpecifierList[i],
       exportConditions,
@@ -264,18 +308,31 @@ async function resolveWithClassic({
 // If this is unsuccesful because export maps are not being used, then all of `importSpecifierList`
 // will be tried with the classic resolution algorithm
 export default async function resolveImportSpecifiers({
+  // @ts-ignore
   importer,
+  // @ts-ignore
   importSpecifierList,
+  // @ts-ignore
   exportConditions,
+  // @ts-ignore
   warn,
+  // @ts-ignore
   packageInfoCache,
+  // @ts-ignore
   extensions,
+  // @ts-ignore
   mainFields,
+  // @ts-ignore
   preserveSymlinks,
+  // @ts-ignore
   useBrowserOverrides,
+  // @ts-ignore
   baseDir,
+  // @ts-ignore
   moduleDirectories,
+  // @ts-ignore
   rootDir,
+  // @ts-ignore
   ignoreSideEffectsForRoot
 }) {
   try {

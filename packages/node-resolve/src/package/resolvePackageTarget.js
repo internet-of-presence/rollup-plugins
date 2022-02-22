@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable no-await-in-loop, no-undefined */
 import { pathToFileURL } from 'url';
 

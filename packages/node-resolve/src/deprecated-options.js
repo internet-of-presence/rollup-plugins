@@ -1,3 +1,6 @@
+/**
+ * @param {{ customResolveOptions?: any; moduleDirectories?: any; }} opts
+ */
 export default function handleDeprecatedOptions(opts) {
   const warnings = [];
 

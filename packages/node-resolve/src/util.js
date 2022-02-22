@@ -5,6 +5,7 @@ import { createFilter } from '@rollup/pluginutils';
 import { realpathSync } from './fs';
 
 // returns the imported package name for bare module imports
+// @ts-ignore
 export function getPackageName(id) {
   if (id.startsWith('.') || id.startsWith('/')) {
     return null;
@@ -23,6 +24,7 @@ export function getPackageName(id) {
   return split[0];
 }
 
+// @ts-ignore
 export function getMainFields(options) {
   let mainFields;
   if (options.mainFields) {
@@ -39,6 +41,7 @@ export function getMainFields(options) {
   return mainFields;
 }
 
+// @ts-ignore
 export function getPackageInfo(options) {
   const {
     cache,
@@ -108,11 +111,14 @@ export function getPackageInfo(options) {
           resolved = resolve(pkgRoot, resolved);
         }
         /* eslint-disable no-param-reassign */
+        // @ts-ignore
         browser[key] = resolved;
         if (key[0] === '.') {
           const absoluteKey = resolve(pkgRoot, key);
+          // @ts-ignore
           browser[absoluteKey] = resolved;
           if (!extname(key)) {
+            // @ts-ignore
             extensions.reduce((subBrowser, ext) => {
               subBrowser[absoluteKey + ext] = subBrowser[key];
               return subBrowser;
@@ -142,8 +148,10 @@ export function getPackageInfo(options) {
   if (!ignoreSideEffectsForRoot || rootDir !== pkgRoot) {
     const packageSideEffects = pkg.sideEffects;
     if (typeof packageSideEffects === 'boolean') {
+      // @ts-ignore
       internalPackageInfo.hasModuleSideEffects = () => packageSideEffects;
     } else if (Array.isArray(packageSideEffects)) {
+      // @ts-ignore
       internalPackageInfo.hasModuleSideEffects = createFilter(packageSideEffects, null, {
         resolve: pkgRoot
       });
@@ -154,6 +162,7 @@ export function getPackageInfo(options) {
   return internalPackageInfo;
 }
 
+// @ts-ignore
 export function normalizeInput(input) {
   if (Array.isArray(input)) {
     return input;

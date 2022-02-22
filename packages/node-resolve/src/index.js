@@ -3,8 +3,10 @@ import { dirname, normalize, resolve, sep } from 'path';
 
 import builtinList from 'builtin-modules';
 import deepMerge from 'deepmerge';
+// @ts-ignore
 import isModule from 'is-module';
 
+// @ts-ignore
 import { version } from '../package.json';
 
 import { isDirCached, isFileCached, readCachedFile } from './cache';
@@ -15,6 +17,7 @@ import { getMainFields, getPackageName, normalizeInput } from './util';
 
 const builtins = new Set(builtinList);
 const ES6_BROWSER_EMPTY = '\0node-resolve:empty.js';
+// @ts-ignore
 const deepFreeze = (object) => {
   Object.freeze(object);
 
@@ -45,41 +48,55 @@ export function nodeResolve(opts = {}) {
   const { warnings } = handleDeprecatedOptions(opts);
 
   const options = { ...defaults, ...opts };
+  // @ts-ignore
   const { extensions, jail, moduleDirectories, ignoreSideEffectsForRoot } = options;
+  // @ts-ignore
   const conditionsEsm = [...baseConditionsEsm, ...(options.exportConditions || [])];
+  // @ts-ignore
   const conditionsCjs = [...baseConditionsCjs, ...(options.exportConditions || [])];
   const packageInfoCache = new Map();
   const idToPackageInfo = new Map();
   const mainFields = getMainFields(options);
   const useBrowserOverrides = mainFields.indexOf('browser') !== -1;
+  // @ts-ignore
   const isPreferBuiltinsSet = options.preferBuiltins === true || options.preferBuiltins === false;
+  // @ts-ignore
   const preferBuiltins = isPreferBuiltinsSet ? options.preferBuiltins : true;
+  // @ts-ignore
   const rootDir = resolve(options.rootDir || process.cwd());
   let { dedupe } = options;
+  // @ts-ignore
   let rollupOptions;
 
   if (typeof dedupe !== 'function') {
+    // @ts-ignore
     dedupe = (importee) =>
+      // @ts-ignore
       options.dedupe.includes(importee) || options.dedupe.includes(getPackageName(importee));
   }
 
   const resolveOnly = options.resolveOnly.map((pattern) => {
+    // @ts-ignore
     if (pattern instanceof RegExp) {
       return pattern;
     }
+    // @ts-ignore
     const normalized = pattern.replace(/[\\^$*+?.()|[\]{}]/g, '\\$&');
     return new RegExp(`^${normalized}$`);
   });
 
   const browserMapCache = new Map();
+  // @ts-ignore
   let preserveSymlinks;
 
+  // @ts-ignore
   const doResolveId = async (context, importee, importer, custom) => {
     // strip query params from import
     const [importPath, params] = importee.split('?');
     const importSuffix = `${params ? `?${params}` : ''}`;
     importee = importPath;
 
+    // @ts-ignore
     const baseDir = !importer || dedupe(importee) ? rootDir : dirname(importer);
 
     // https://github.com/defunctzombie/package-browser-field-spec
@@ -117,6 +134,7 @@ export function nodeResolve(opts = {}) {
       resolveOnly.length &&
       !resolveOnly.some((pattern) => pattern.test(id))
     ) {
+      // @ts-ignore
       if (normalizeInput(rollupOptions.input).includes(importee)) {
         return null;
       }
@@ -143,6 +161,7 @@ export function nodeResolve(opts = {}) {
       }
     }
 
+    // @ts-ignore
     const warn = (...args) => context.warn(...args);
     const isRequire = custom && custom['node-resolve'] && custom['node-resolve'].isRequire;
     const exportConditions = isRequire ? conditionsCjs : conditionsEsm;
@@ -158,6 +177,7 @@ export function nodeResolve(opts = {}) {
       packageInfoCache,
       extensions,
       mainFields,
+      // @ts-ignore
       preserveSymlinks,
       useBrowserOverrides,
       baseDir,
@@ -181,18 +201,22 @@ export function nodeResolve(opts = {}) {
     }
 
     const { packageInfo, hasModuleSideEffects, hasPackageEntry, packageBrowserField } = resolved;
+    // @ts-ignore
     let { location } = resolved;
     if (packageBrowserField) {
       if (Object.prototype.hasOwnProperty.call(packageBrowserField, location)) {
+        // @ts-ignore
         if (!packageBrowserField[location]) {
           browserMapCache.set(location, packageBrowserField);
           return { id: ES6_BROWSER_EMPTY };
         }
+        // @ts-ignore
         location = packageBrowserField[location];
       }
       browserMapCache.set(location, packageBrowserField);
     }
 
+    // @ts-ignore
     if (hasPackageEntry && !preserveSymlinks) {
       const exists = await fileExists(location);
       if (exists) {
@@ -215,11 +239,13 @@ export function nodeResolve(opts = {}) {
       }
     }
 
+    // @ts-ignore
     if (options.modulesOnly && (await fileExists(location))) {
       const code = await readFile(location, 'utf-8');
       if (isModule(code)) {
         return {
           id: `${location}${importSuffix}`,
+          // @ts-ignore
           moduleSideEffects: hasModuleSideEffects(location)
         };
       }
@@ -227,6 +253,7 @@ export function nodeResolve(opts = {}) {
     }
     return {
       id: `${location}${importSuffix}`,
+      // @ts-ignore
       moduleSideEffects: hasModuleSideEffects(location)
     };
   };
@@ -236,13 +263,16 @@ export function nodeResolve(opts = {}) {
 
     version,
 
-    buildStart(options) {
-      rollupOptions = options;
+    // @ts-ignore
+    buildStart(inputOptions) {
+      rollupOptions = inputOptions;
 
       for (const warning of warnings) {
+        // @ts-ignore
         this.warn(warning);
       }
 
+      // @ts-ignore
       ({ preserveSymlinks } = options);
     },
 
@@ -252,6 +282,7 @@ export function nodeResolve(opts = {}) {
       isDirCached.clear();
     },
 
+    // @ts-ignore
     async resolveId(importee, importer, resolveOptions) {
       if (importee === ES6_BROWSER_EMPTY) {
         return importee;
@@ -265,6 +296,7 @@ export function nodeResolve(opts = {}) {
 
       const resolved = await doResolveId(this, importee, importer, resolveOptions.custom);
       if (resolved) {
+        // @ts-ignore
         const resolvedResolved = await this.resolve(
           resolved.id,
           importer,
@@ -282,6 +314,7 @@ export function nodeResolve(opts = {}) {
       return resolved;
     },
 
+    // @ts-ignore
     load(importee) {
       if (importee === ES6_BROWSER_EMPTY) {
         return 'export default {};';
@@ -289,6 +322,7 @@ export function nodeResolve(opts = {}) {
       return null;
     },
 
+    // @ts-ignore
     getPackageInfoForId(id) {
       return idToPackageInfo.get(id);
     }

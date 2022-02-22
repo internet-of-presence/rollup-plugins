@@ -3,9 +3,11 @@ import resolvePackageTarget from './resolvePackageTarget';
 
 import { InvalidModuleSpecifierError } from './utils';
 
+// @ts-ignore
 async function resolvePackageImportsExports(context, { matchKey, matchObj, internal }) {
   if (!matchKey.endsWith('*') && matchKey in matchObj) {
     const target = matchObj[matchKey];
+    // @ts-ignore
     const resolved = await resolvePackageTarget(context, { target, subpath: '', internal });
     return resolved;
   }
@@ -33,6 +35,7 @@ async function resolvePackageImportsExports(context, { matchKey, matchObj, inter
       const target = matchObj[expansionKey];
       const subpath = matchKey.substring(expansionKey.length);
 
+      // @ts-ignore
       const resolved = await resolvePackageTarget(context, { target, subpath, internal });
       return resolved;
     }

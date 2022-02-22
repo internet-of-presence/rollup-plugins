@@ -8,11 +8,11 @@ export default function json(options = {}) {
     name: 'json',
 
     // eslint-disable-next-line no-shadow
-    transform(json, id) {
+    transform(jsonString, id) {
       if (id.slice(-5) !== '.json' || !filter(id)) return null;
 
       try {
-        const parsed = JSON.parse(json);
+        const parsed = JSON.parse(jsonString);
         return {
           code: dataToEsm(parsed, {
             preferConst: options.preferConst,
